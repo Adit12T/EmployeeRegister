@@ -42,8 +42,6 @@ public class EmployeeControl {
         empInfo.setPassword(emp.getPassword());
         empInfo.setConfirmPassword(emp.getConfirmPassword());
         
-       // emprepo.save(empInfo.getFirstName(), empInfo.getLastName(), empInfo.getphoneNumber(),
-        //		empInfo.getEmail(), empInfo.getPassword(), empInfo.getConfirmPassword());
         System.out.println(empInfo);
         empRepo.save(empInfo);
         
