@@ -1,15 +1,18 @@
 package com.example.demo.model;
 
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Employee {
 
+	@Id
+	UUID id = UUID.randomUUID();
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
-	@Id
 	private String email;
 	private String password;
 	private String confirmPassword;
