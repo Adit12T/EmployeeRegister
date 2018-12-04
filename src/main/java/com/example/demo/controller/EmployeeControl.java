@@ -35,11 +35,10 @@ public class EmployeeControl {
             })
     public ResponseEntity<Employee> create(@RequestBody Employee emp ) {
 				
-	System.err.println(emp.getFirstName());
 	    empRepo.save(emp);
+	    return new ResponseEntity<Employee>(emp,HttpStatus.OK);
+	}
         
-        return new ResponseEntity<Employee>(emp,HttpStatus.OK);
-}
 	
 	@GetMapping(path = "/getAll")
 	public List<Employee> getAll(){
