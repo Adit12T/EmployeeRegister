@@ -22,6 +22,8 @@ public class EmployeeControl {
 	private EmpService eService;
 	@Autowired
 	private EmpRepo empRepo;
+	
+	
 	@PostMapping(
             path= {"/create"},
             consumes= {
@@ -33,19 +35,10 @@ public class EmployeeControl {
             })
     public ResponseEntity<Employee> create(@RequestBody Employee emp ) {
 				
-	
-		Employee empInfo = new Employee();
-		empInfo.setFirstName(emp.getFirstName());
-        empInfo.setLastName(emp.getLastName());
-        empInfo.setphoneNumber(emp.getphoneNumber());
-        empInfo.setEmail(emp.getEmail());
-        empInfo.setPassword(emp.getPassword());
-        empInfo.setConfirmPassword(emp.getConfirmPassword());
+	System.err.println(emp.getFirstName());
+	    empRepo.save(emp);
         
-        System.out.println(empInfo);
-        empRepo.save(empInfo);
-        
-        return new ResponseEntity<Employee>(empInfo,HttpStatus.OK);
+        return new ResponseEntity<Employee>(emp,HttpStatus.OK);
 }
 	
 	@GetMapping(path = "/getAll")
