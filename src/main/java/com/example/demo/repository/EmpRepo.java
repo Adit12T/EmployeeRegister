@@ -8,4 +8,6 @@ import com.example.demo.model.Employee;
 @Repository
 public interface EmpRepo extends MongoRepository<Employee, String>{
 
+	public Employee findByFirstName(String firstName);
+
 }

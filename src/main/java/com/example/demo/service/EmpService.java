@@ -14,9 +14,15 @@ public class EmpService {
 	@Autowired
 	private EmpRepo empRepo;
 	
+
 	public Employee create(String firstName, String lastName, String phoneNumber, String email, String password, String confirmPassword) {
 		return empRepo.save(new Employee (firstName, lastName, phoneNumber, email, password, confirmPassword));
 	}
+	
+	public Employee getByFirstName(String firstName) {
+		
+		return empRepo.findByFirstName(firstName);
+		}
 	
 	public List<Employee> getAll(){
 		return empRepo.findAll();
