@@ -18,6 +18,11 @@ public class AddEmpService {
 		return addEmpRepo.save(new AddEmployee (firstName, lastName, phoneNumber, primaryEmail, secondaryEmail, address, jobCode, jobTitle, endClient, startDate, vendor, projectId, projectName, managerName, approverName));
 	}
 	
+	public List<AddEmployee> getByFirstName(String firstName) {
+		
+		return addEmpRepo.findByFirstName(firstName);
+		}
+	
 	public List<AddEmployee> getAll(){
 		return addEmpRepo.findAll();
 	}
