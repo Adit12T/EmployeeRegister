@@ -24,7 +24,7 @@ public class AddEmployeeControl {
 	@Autowired
 	private AddEmpRepo empRepo;
 	@PostMapping(
-            path= {"/employee"},
+            path= {"/employee/create"},
             consumes= {
                     MediaType.APPLICATION_JSON_VALUE
             },
@@ -38,12 +38,12 @@ public class AddEmployeeControl {
         return new ResponseEntity<AddEmployee>(emp,HttpStatus.OK);
 }
 	
-	@GetMapping(path = "/search/{firstName}")
+	@GetMapping(path = "employee/search/{firstName}")
 	public List<AddEmployee> getList(@PathVariable String firstName) {
 		return eService.getByFirstName(firstName);
 	}     
 	
-	@GetMapping(path = "/listEmployees")
+	@GetMapping(path = "employee/listEmployees")
 	public List<AddEmployee> getAll(){
 		return eService.getAll();
 	}

@@ -26,7 +26,7 @@ public class EmployeeControl {
 	
 	
 	@PostMapping(
-            path= {"/create"},
+            path= {"user/create"},
             consumes= {
                     MediaType.APPLICATION_JSON_VALUE
             },
@@ -40,12 +40,12 @@ public class EmployeeControl {
 	    return new ResponseEntity<Employee>(emp,HttpStatus.OK);
 	}
 	
-	@GetMapping(path = "/get")
+	@GetMapping(path = "user/get")
 	public Employee getEmp(@RequestParam String firstName) {
 		return eService.getByFirstName(firstName);
 	}     
 	
-	@GetMapping(path = "/getAll")
+	@GetMapping(path = "user/getAll")
 	public List<Employee> getAll(){
 		return eService.getAll();
 	}
