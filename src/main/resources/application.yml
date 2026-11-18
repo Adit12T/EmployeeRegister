@@ -20,7 +20,7 @@ management:
       probes:
         enabled: true
 
-server:
-  error:
-    include-message: never
-    include-stacktrace: never
+# Boot 4 moved these from server.error
+spring.web.error:
+  include-message: never
+  include-stacktrace: never
